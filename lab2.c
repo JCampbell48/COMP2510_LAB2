@@ -11,7 +11,31 @@ void rotateArray(int arr[10][10], int n, int rows, int cols)
     int temp[10][10];
     int numberOfRotations = ((n / 90) % 4) + 1;
 
-    for (int h = 0; h < numberOfRotations; h++)
+    // for values of rotations more than 1
+    if (numberOfRotations > 1)
+    {
+        for (int i = 0; i < cols; i++)
+        {
+            for (int j = 0; j < rows; j++)
+            {
+
+                // swaps positions of row and column
+                temp[i][j] = arr[rows - 1 - j][i];
+            }
+        }
+
+        for (int h = 1; h < numberOfRotations; h++)
+
+            for (int i = 0; i < cols; i++)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+
+                    // swap positions of row and column
+                    temp[i][j] = temp[rows - 1 - j][i];
+                }
+            }
+    }
 
     {
         // Rotates by 90 degrees
