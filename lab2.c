@@ -9,7 +9,7 @@ void rotateArray(int arr[10][10], int n, int rows, int cols)
 
     // temporary array
     int temp[10][10];
-    int numberOfRotations = (n / 90) % 4;
+    int numberOfRotations = ((n / 90) % 4) + 1;
 
     for (int h = 0; h < numberOfRotations; h++)
 
